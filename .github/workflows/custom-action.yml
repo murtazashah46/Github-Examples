@@ -1,15 +1,12 @@
-on: [push]
+name: Scheduled Date Workflow
+
+on: 
+  schedule:
+    - cron: '*/1 * * * *' 
 
 jobs:
-  my-job:
-    runs-on: ubuntu-latest
-    name: A job to say hello
-    steps:
-      - name: Hello world action step
-        id: hello
-        uses: omenking/barsoom@0.0.6
-        with:
-          name: 'Brown'
-      # Use the output from the `hello` step
-      - name: Get the Output
-        run: echo "The time was ${{ steps.hello.outputs.greeting }}"
+  scheduled_action:
+  runs-on: ubuntu_latest
+  steps:
+    name: Echo current time on a schedule
+    run: echo "The current server time is $(date)"
