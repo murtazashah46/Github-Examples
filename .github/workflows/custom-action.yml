@@ -6,7 +6,7 @@ on:
 
 jobs:
   scheduled_action:
-  runs-on: ubuntu_latest
+  runs-on: ubuntu-latest
   steps:
     name: Echo current time on a schedule
     run: echo "The current server time is $(date)"
